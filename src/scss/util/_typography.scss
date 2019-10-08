@@ -1,0 +1,17 @@
+@mixin fs-base {
+  font-size: $fs-base;
+
+  @include break(mobile) {
+    font-size: calc(#{$fs-small} + 0.125vw);
+  }
+}
+
+@mixin fs-medium {
+  @include break(580px) {
+    font-size: calc(#{$fs-base} + 0.5vw);
+  }
+
+  @include break(tablet-l) {
+    font-size: calc(#{$fs-base} + 0.125vw);
+  }
+}

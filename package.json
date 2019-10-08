@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "sberbank-frontend",
+  "version": "1.0.1",
+  "scripts": {
+    "serve": "cd public && python -m SimpleHTTPServer 7654",
+    "start": "concurrently --kill-others 'grunt watch' 'npm run serve'"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "concurrently": "^4.0.1",
+    "cssnano": "^3.10.0",
+    "grunt": "~0.4.5",
+    "grunt-concurrent": "*",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-htmlmin": "^3.0.0",
+    "grunt-contrib-pug": "^2.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-watch": "*",
+    "grunt-nightwatch": "^0.5.4",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "2.1.0",
+    "grunt-sass-globbing": "*",
+    "grunt-svgmin": "^5.0.0",
+    "grunt-svgstore": "^1.0.0",
+    "load-grunt-config": "*",
+    "postcss-inline-svg": "^3.1.1"
+  }
+}

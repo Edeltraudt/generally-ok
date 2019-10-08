@@ -1,0 +1,134 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .blog & {
+    align-items: flex-end;
+  }
+
+  &__header, &__expand {
+    @include break(desktop, max) {
+      @include visually-hidden;
+    }
+  }
+
+  @include break(desktop) {
+    &__header {
+      align-items: inherit;
+      align-self: stretch;
+      display: flex;
+      grid-column-end: -1;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+
+      &[data-scroll='in'] {
+        transition: none;
+      }
+
+      .-projects-expanded &[data-scroll='in'] {
+        transform: scale(1) translateY(100%) translateY($spacing-x-large) !important;
+        transition: none;
+        transition-delay: 0s;
+      }
+    }
+
+    &__headline {
+      font: $fw-display #{$fs-base}/$lh-small $ff-display;
+      @include fs-base;
+      margin: 0.625em 0 1.5em;
+    }
+
+    &__expand {
+      border-left: 2px solid;
+      border-top: 2px solid;
+      color: $color-primary;
+      cursor: pointer;
+      display: inline-block;
+      font-size: $fs-x-small;
+      height: 1em;
+      transition: 0.3s transform $transition-ease-out;
+      width: 1em;
+
+      .-projects-expanded &,
+      .-blog-expanded & {
+        transform: rotate(-180deg);
+      }
+
+      .posts__header:hover &,
+      .posts__header:focus-within & {
+        transform: translate(-3px, -3px);
+
+        .-projects-expanded & {
+          transform: rotate(-180deg) translate(-3px, -3px);
+        }
+
+        .blog & {
+          transform: translate(3px, -3px);
+
+          .-blog-expanded & {
+            transform: rotate(-180deg) translate(3px, -3px);
+          }
+        }
+      }
+
+      .blog & {
+        border-left: 0;
+        border-right: 2px solid;
+      }
+    }
+
+    &__expand-button {
+      @include absolute;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    align-self: stretch;
+    display: grid;
+    grid-gap: $spacing-base;
+    grid-template: auto / 1fr;
+    pointer-events: none;
+    position: relative;
+    z-index: 1;
+
+    .-projects-expanded &,
+    .-blog-expanded & {
+      @include break(tablet) {
+        display: grid;
+        grid-gap: 6%;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 14rem;
+
+        > .post:nth-child(odd) {
+          margin-bottom: -7rem;
+          margin-top: 7rem;
+          z-index: 20;
+
+          &:last-child {
+            grid-column: 2;
+            margin-top: 0;
+            z-index: initial;
+          }
+        }
+      }
+
+      @include break(desktop) {
+        padding-bottom: 0;
+      }
+    }
+
+    .post {
+      pointer-events: all;
+    }
+
+    .-blog-expanded &,
+    .-projects-expanded & {
+      z-index: initial;
+    }
+  }
+}

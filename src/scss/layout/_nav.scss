@@ -1,0 +1,123 @@
+.nav {
+  z-index: 10;
+
+  &__skip {
+    @extend %visually-hidden;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--spacer,
+  &__item {
+    border-top: 2px solid;
+    flex: 1;
+    padding: $spacing-base * 0.9 0 $spacing-base * 1.1;
+    text-align: center;
+
+    @include break(tablet) {
+      padding: $spacing-medium * 0.9 0 $spacing-medium * 1.1;
+    }
+  }
+
+  &__item {
+    &:last-child {
+      padding-right: $spacing-base;
+    }
+
+    @include break(mobile) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__link {
+    @include fs-base;
+    color: transparent;
+    cursor: pointer;
+    font-weight: $fw-display;
+    padding: 0 $spacing-base;
+    pointer-events: all;
+    position: relative;
+    will-change: letter-spacing;
+
+    svg {
+      color: $color-headlines;
+      height: 1.25em;
+      transition: color 0.2s ease;
+      width: 1.25em;
+    }
+
+    &:hover svg {
+      color: $color-primary;
+    }
+
+    &__clone {
+      color: $color-headlines;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: 0.4s ease;
+    }
+
+    &:hover &__clone {
+      letter-spacing: 0.025em;
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      margin-top: -1px;
+      border-bottom: 2px solid $color-primary;
+      z-index: -1;
+      content: '';
+      opacity: 0;
+      transform-origin: left center;
+      transition: 0.4s $transition-ease-out;
+      left: 10px;
+      right: 10px;
+      transform: scaleX(0);
+    }
+
+    &.js-blog {
+      .-projects-expanded & {
+        .nav__link__clone {
+          color: $color-soft;
+        }
+
+        @include break(tablet) {
+          .nav__link__clone {
+            color: $color-headlines;
+          }
+
+          &::before {
+            opacity: 1;
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+
+    &.js-projects {
+      .-blog-expanded & {
+        .nav__link__clone {
+          color: $color-soft;
+        }
+
+        @include break(tablet) {
+          .nav__link__clone {
+            color: $color-headlines;
+          }
+
+          &::before {
+            opacity: 1;
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}

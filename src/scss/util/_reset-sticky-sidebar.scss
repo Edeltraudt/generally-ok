@@ -1,0 +1,14 @@
+@mixin reset-sticky-sidebar {
+  &.is-affixed {
+    height: auto !important;
+    position: static !important;
+
+    .posts {
+      left: auto !important;
+      position: static !important;
+      top: auto !important;
+      transform: none !important;
+      width: auto !important;
+    }
+  }
+}

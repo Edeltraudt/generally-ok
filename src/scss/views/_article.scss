@@ -1,0 +1,114 @@
+@function article-columns($n, $bp: desktop) {
+  $max: 11;
+
+  @if $bp == desktop {
+    $max: 11;
+  }
+
+  @return 100% / $max * $n;
+}
+
+.article {
+  overflow: visible;
+
+  @include break(desktop) {
+    margin: 0 auto;
+    padding: 0 article-columns(1);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0.5em;
+    max-width: 36rem;
+    overflow: hidden;
+  }
+
+  &__tags {
+    margin: 0 0 $spacing-large;
+    order: -1;
+  }
+
+  &__content {
+    background: $color-base;
+    border-radius: 30px;
+    box-sizing: content-box;
+    margin-left: -20px;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+
+    .img {
+      margin: -20px 0 $spacing-large;
+
+      &:not(:first-child) {
+        margin-top: $spacing-large;
+      }
+    }
+  }
+
+  &__intro {
+    background: transparent;
+  }
+
+  p:not([class]) {
+    color: $color-text;
+    font-size: $fs-base;
+    line-height: $lh-base;
+    margin: 0 0 1em;
+
+    @include break(mobile) {
+      font-size: $fs-medium;
+    }
+  }
+
+  .img {
+    background: $color-light;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: table;
+      padding-bottom: 100% / 16 * 9;
+      width: 100%;
+    }
+
+    img {
+      height: 100%;
+      left: 0;
+      min-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      transition: opacity 0.6s $transition-ease-out;
+      width: 100%;
+
+      &[data-scroll='in'] {
+        opacity: 1;
+      }
+    }
+
+    &.-full {
+      margin-right: article-columns(-1);
+      max-width: article-columns(12);
+
+      @include break(mobile-m) {
+        margin-right: article-columns(-2);
+        max-width: article-columns(13);
+      }
+
+      @include break(tablet) {
+        margin-left: article-columns(-1);
+      }
+
+      @include break(tablet-l) {
+        @include break(desktop, max) {
+          margin-left: 0;
+          max-width: article-columns(12);
+        }
+      }
+    }
+  }
+}

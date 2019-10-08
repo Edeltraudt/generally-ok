@@ -1,0 +1,129 @@
+extends _template/_master
+
+block body
+  header.page__header(data-scroll)
+    h2.intro.text-appear(data-scroll-plain) I sometimes think me smart, and now you’ll all be able to see it too.
+    a.button.text-appear(data-scroll-plain, href='') Cleanse me
+
+  main.page__content(data-scroll-plain)
+    #posts.page__posts
+      #blog.page__blog.blog
+        .posts
+          .posts__header.text-appear(data-scroll-plain)
+            .posts__expand
+            h2.posts__headline Blog
+            button.posts__expand-button.js-blog
+
+          .posts__list
+            article.posts__item.post(data-scroll-plain)
+              .post__content
+                h3.post__headline Making IE11 into your bitch without looking like a pimp
+                footer.post__footer.tag-list
+                  .tag Cross-browser
+              a.post__link(href='', aria-label='Read xxx')
+            article.posts__item.post(data-scroll-plain)
+              .post__content
+                h3.post__headline Not losing your mind when Safari shows no love for your efforts
+              a.post__link(href='', aria-label='Read xxx')
+            article.posts__item.post(data-scroll-plain)
+              .post__content
+                h3.post__headline Impress your coworkers by styling a bar chart without Canvas
+              a.post__link(href='', aria-label='Read xxx')
+            article.posts__item.post(data-scroll-plain)
+              .post__content
+                h3.post__headline Living worry-free while still caring for the elderly and forgotten
+                p.post__description Or how to develop with IE11 in mind
+              a.post__link(href='', aria-label='Read xxx')
+            article.posts__item.post(data-scroll-plain)
+              .post__content
+                h3.post__headline Why making Chromium the dev standard is plain disrespect
+              a.post__link(href='', aria-label='Read xxx')
+            article.posts__item.post(data-scroll-plain)
+              .post__content
+                h3.post__headline Why making Chromium the dev standard is plain disrespect
+              a.post__link(href='', aria-label='Read xxx')
+            article.posts__item.post(data-scroll-plain)
+              .post__content
+                h3.post__headline Why making Chromium the dev standard is plain disrespect
+              a.post__link(href='', aria-label='Read xxx')
+
+      #projects.page__projects.projects(data-scroll)
+        .posts
+          .posts__header.text-appear(data-scroll-plain)
+            .posts__expand
+            h2.posts__headline Projects
+            button.posts__expand-button.js-projects
+
+          .posts__list
+            article.posts__item.post(data-scroll-plain)
+              img.post__image(src='https://picsum.photos/400/300')
+              .post__content
+                h3.post__headline Kaiterra Live Air
+                p.post__description A project about the friendships we form along the way
+
+                footer.post__footer.tag-list
+                  .tag Design
+              a.post__link(href='', aria-label='Read xxx')
+
+            article.posts__item.post(data-scroll-plain)
+              img.post__image(src='https://picsum.photos/400/300')
+              .post__content
+                h3.post__headline Kaiterra Glance
+                p.post__description Why throwing stuff at the wall is a good idea
+
+                footer.post__footer.tag-list
+                  .tag Design
+                  .tag CSS Development
+              a.post__link(href='', aria-label='Read xxx')
+
+            article.posts__item.post(data-scroll-plain)
+              img.post__image(src='https://picsum.photos/400/300')
+              .post__content
+                h3.post__headline Making IE11 into your bitch without looking like a pimp
+
+                footer.post__footer.tag-list
+                  .tag Design
+              a.post__link(href='', aria-label='Read xxx')
+
+            article.posts__item.post(data-scroll-plain)
+              img.post__image(src='https://picsum.photos/400/300')
+              .post__content
+                h3.post__headline Making IE11 into your bitch without looking like a pimp
+
+                footer.post__footer.tag-list
+                  .tag Design
+              a.post__link(href='', aria-label='Read xxx')
+
+            article.posts__item.post(data-scroll-plain)
+              img.post__image(src='https://picsum.photos/400/300')
+              .post__content
+                h3.post__headline Making IE11 into your bitch without looking like a pimp
+
+                footer.post__footer.tag-list
+                  .tag Design
+              a.post__link(href='', aria-label='Read xxx')
+
+            article.posts__item.post(data-scroll-plain)
+              img.post__image(src='https://picsum.photos/400/300')
+              .post__content
+                h3.post__headline Making IE11 into your bitch without looking like a pimp
+
+                footer.post__footer.tag-list
+                  .tag Design
+              a.post__link(href='', aria-label='Read xxx')
+
+    .page__footer(data-scroll)
+      p.posts-end Sorry to disappoint your endless scrolling needs, but my content is limited unlike your Instagram feed.
+
+block scripts
+  script.
+    const sidebarElement = document.querySelector('#projects');
+
+    if (sidebarElement) {
+      const sidebar = new StickySidebar('#projects', {
+        containerSelector: '#posts',
+        innerWrapperSelector: '.posts',
+        bottomSpacing: 120,
+        topSpacing: 20
+      });
+    }

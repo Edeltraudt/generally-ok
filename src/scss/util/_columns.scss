@@ -1,0 +1,4 @@
+@function columns($n, $max: 21) {
+  @return calc((100vw - #{$padding-x-l * 2}) / #{$max} * #{$n});
+}
+

@@ -1,0 +1,39 @@
+.logo {
+  border: 0.175em solid $color-primary;
+  border-radius: 50%;
+  border-left-color: $color-primary-light;
+  border-top-color: $color-primary-light;
+  font-size: calc(#{$fs-x-large} + 2vw);
+  height: 1em;
+  transform: rotate(-45deg);
+  transition: transform 1s 0.05s $transition-ease-out-back, opacity 0.75s ease;
+  width: 1em;
+
+  @include break(mobile-m) {
+    font-size: calc(#{$fs-x-large} + 3.5vw);
+  }
+
+  @include break(desktop) {
+    font-size: $fs-xx-large;
+  }
+
+  &:hover, &[data-scroll]:hover {
+    transform: rotate(-405deg);
+  }
+
+  .-projects-expanded & {
+    transform: rotate(-180deg);
+
+    &:hover, &[data-scroll]:hover {
+      transform: rotate(180deg);
+    }
+  }
+
+  .-blog-expanded & {
+    transform: rotate(0deg);
+
+    &:hover, &[data-scroll]:hover {
+      transform: rotate(360deg);
+    }
+  }
+}

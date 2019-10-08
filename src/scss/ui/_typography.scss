@@ -1,0 +1,43 @@
+.headline {
+  font-size: calc(#{$fs-large} + 1vw);
+  font-weight: $fw-display;
+  line-height: $lh-small;
+  margin: 0 0 0.5em;
+
+  @include break(tablet) {
+    font-size: calc(#{$fs-x-large} + 0.25vw);
+  }
+}
+
+.intro {
+  font: $fw-display #{$fs-large}/#{$lh-base-s} $ff-display;
+  margin: 0 0 1em;
+
+  @include break(mobile) {
+    font-size: calc(#{$fs-large} + 0.5vw);
+  }
+
+  @include break(desktop) {
+    @include break(hd, max) {
+      font-size: calc(#{$fs-large} + 0.125vw);
+    }
+  }
+}
+
+.info {
+  @extend .intro;
+  color: $color-soft;
+  font-weight: $fw-text;
+}
+
+.posts-end {
+  @extend .intro;
+  color: $color-soft;
+  position: relative;
+  z-index: 2;
+
+  @include break(tablet-l) {
+    margin: 0 auto;
+    text-align: center;
+  }
+}

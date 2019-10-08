@@ -1,0 +1,15 @@
+html {
+  font-size: $fs-document-s;
+
+  @include break(tablet) {
+    font-size: $fs-document;
+  }
+}
+
+body {
+  font: $fw-text 1em/#{$lh-base-s} $ff-text;
+}
+
+strong {
+  font-weight: $fw-bold;
+}

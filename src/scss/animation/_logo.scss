@@ -1,0 +1,10 @@
+.logo {
+  transition-timing-function: $transition-ease-in-out-quint, $transition-ease-in-out-quint, $transition-ease-in-out-quint;
+  transition-duration: 0.8s;
+
+  &:not([data-scroll='in']) {
+    opacity: 0 !important;
+    transform: scale(0.8) rotate(-270deg);
+    transform-origin: center center;
+  }
+}

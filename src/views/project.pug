@@ -1,0 +1,43 @@
+extends _template/_master
+
+append variables
+  - isSubpage = true;
+
+block body
+  main.article.page__content(data-scroll-plain)
+    header.article__header.page__header
+      h1.article__title.headline Kaiterra Live Air
+      ul.article__tags.tag-list.-large
+        li.article__tag.tag Design
+        li.article__tag.tag CSS Development
+      p.article__subtitle.info Case Study
+
+    .article__intro.article__content.text-appear(data-scroll-plain)
+      p Copy ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.
+
+    .img.-full
+      img(data-src='https://picsum.photos/700/400?random')
+
+    .article__content.text-appear(data-scroll-plain)
+      p Copy ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+      p Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+      p Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+
+    .img.-full
+      img(data-src='https://picsum.photos/700/400?random')
+
+    .page__footer
+      //- scroll spacer
+
+block scripts
+  script.
+    ScrollOut({
+       targets: 'img',
+       scope: '.article',
+       //once: true,
+       onShown: function(el) {
+          if (!el.src) {
+             el.src = el.dataset.src;
+          }
+       }
+    })

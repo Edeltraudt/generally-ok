@@ -1,0 +1,27 @@
+.columns {
+  @include break(580px) {
+    display: flex;
+  }
+}
+
+.column {
+  @include break(580px) {
+    flex: 1;
+
+    & + & {
+      margin-left: columns(1);
+    }
+  }
+
+  @include break(tablet) {
+    & + & {
+      margin-left: columns(1, 10);
+    }
+  }
+
+  @include break(tablet-l) {
+    & + & {
+      margin-left: columns(1);
+    }
+  }
+}

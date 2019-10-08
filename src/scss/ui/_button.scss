@@ -1,0 +1,27 @@
+.button {
+  color: $color-primary;
+  font: $fw-display #{$fs-medium}/1 $ff-text;
+  font-size: calc(#{$fs-medium} + 0.25vw);
+  padding: 0.35em 0.125em;
+  position: relative;
+  text-decoration: none;
+  z-index: 2;
+
+  &::after {
+    @include absolute;
+    background: $color-primary-light;
+    content: '';
+    transform: scaleY(0.054);
+    transform-origin: center bottom;
+    transition: opacity 0.6s ease,
+      transform 0.6s $transition-ease-in-out-quint;
+    z-index: -1;
+  }
+
+  &:hover, &:focus {
+    &::after {
+      opacity: 0.5;
+      transform: scaleY(1);
+    }
+  }
+}

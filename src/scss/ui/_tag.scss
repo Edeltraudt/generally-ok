@@ -1,0 +1,31 @@
+.tag {
+  color: $color-primary;
+  display: inline-block;
+  font-size: 0.75em;
+  font-weight: $fw-display;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  &-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & + & {
+    margin-left: $spacing-x-small;
+
+    .-large & {
+      &::before {
+        color: $color-primary-light;
+        content: '/';
+        margin-right: $spacing-x-small;
+      }
+    }
+  }
+
+
+  .-large & {
+  }
+}
