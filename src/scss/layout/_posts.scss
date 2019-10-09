@@ -3,7 +3,7 @@
   flex-direction: column;
   position: relative;
 
-  .page__blog & {
+  .layout__blog & {
     align-items: flex-end;
   }
 
@@ -64,7 +64,7 @@
           transform: rotate(-180deg) translate(-3px, -3px);
         }
 
-        .page__blog & {
+        .layout__blog & {
           transform: translate(3px, -3px);
 
           .-blog-expanded & {
@@ -73,7 +73,7 @@
         }
       }
 
-      .page__blog & {
+      .layout__blog & {
         border-left: 0;
         border-right: 2px solid;
       }
