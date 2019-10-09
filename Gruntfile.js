@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: 'src/scss/**/*.scss',
-        tasks: ['sass']
+        tasks: ['sass:all', 'sass:dist']
       },
       pug: {
         files: 'src/views/**/*.pug',
@@ -24,12 +24,17 @@ module.exports = function(grunt) {
 
     uglify: {
       options: {
-        beautify: true,
-        sourceMap: true
+        beautify: false,
+        sourceMap: false
       },
       all: {
         files: {
           'public/js/application.js': ['src/js/*.js']
+        }
+      },
+      dist: {
+        files: {
+          'public/wp-content/themes/generallyok/js/application.js': ['src/js/*.js']
         }
       }
     },
@@ -51,14 +56,15 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          sourceMap: false
+          sourceMap: false,
+          outputStyle: 'compact'
         },
         files: [
           {
             expand: true,
             cwd: 'src/scss/',
             src: ['**/*.scss'],
-            dest: 'public/css/',
+            dest: 'public/wp-content/themes/generallyok/',
             ext: '.css'
           }
         ]
@@ -177,7 +183,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('default', [
-    'uglify',
+    'uglify:dist',
     'pug',
     'htmlmin',
     'sass:dist',
