@@ -93,9 +93,9 @@ $post-layer-transition-out: transform 0.3s $transition-ease-out;
 
 
   &__image {
+    @include fit-image-container;
     height: 100%;
     left: 0;
-    object-fit: cover;
     position: absolute;
     top: 0;
     transition: $post-layer-transition-out;
@@ -156,6 +156,10 @@ $post-layer-transition-out: transform 0.3s $transition-ease-out;
   &__footer {
     margin-bottom: $spacing-x-small;
     margin-top: auto;
+  }
+
+  &__headline + &__footer {
+    margin-top: 0;
   }
 
   .tag {

@@ -28,6 +28,11 @@
   @extend .intro;
   color: $color-soft;
   font-weight: $fw-text;
+
+  .article & p:not([class]) {
+    all: inherit;
+    margin: 0;
+  }
 }
 
 .posts-end {

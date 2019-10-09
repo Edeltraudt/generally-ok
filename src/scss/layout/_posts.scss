@@ -24,12 +24,12 @@
       z-index: 2;
 
       &[data-scroll='in'] {
-        transition: none;
+        transition-property: opacity;
       }
 
       .-projects-expanded &[data-scroll='in'] {
         transform: scale(1) translateY(100%) translateY($spacing-x-large) !important;
-        transition: none;
+        transition-property: opacity;
         transition-delay: 0s;
       }
     }
