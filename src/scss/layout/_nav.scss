@@ -26,7 +26,9 @@
 
   &__item {
     &:last-child {
-      padding-right: $spacing-base;
+      @include break(desktop, max) {
+        padding-right: $spacing-base;
+      }
     }
 
     @include break(mobile) {
@@ -43,6 +45,10 @@
     pointer-events: all;
     position: relative;
     will-change: letter-spacing;
+
+    :last-child > & {
+      padding-right: 0;
+    }
 
     svg {
       color: $color-headlines;

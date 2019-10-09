@@ -17,8 +17,46 @@
 // Functions, mixins and placeholders
 @import "util/_util";
 
-// Functions, mixins and placeholders
+// Base styles applied to all tags
 @import "core/_core";
+
+// .pace {
+//   -webkit-pointer-events: none;
+//   pointer-events: none;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   user-select: none;
+
+//   &-progress {
+//     background: darken($color-light, 5%);
+//     position: fixed;
+//     z-index: -1;
+//     top: 0;
+//     right: 100%;
+//     bottom: 0;
+//     width: 100vw;
+//     transform-origin: right center;
+//     will-change: right;
+//     transition: 0.1s ease;
+//   }
+
+//   // when done
+//   &-inactive &-progress {
+//     animation: finishPace 1.25s 0.3s $transition-ease-in-out-quint forwards;
+
+//     @keyframes finishPace {
+//       from {
+//         right: 100%;
+//         width: 100vw;
+//       }
+//       to {
+//         background: $color-light;
+//         right: 50%;
+//         width: 50vw;
+//       }
+//     }
+//   }
+// }
 
 // Scroll animation styles
 @import "animation/_animation";

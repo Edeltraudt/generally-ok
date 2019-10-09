@@ -165,18 +165,6 @@
       &.-blog-expanded {
         margin-top: -12rem;
       }
-
-      &::before {
-        background: $color-light;
-        bottom: 0;
-        content: '';
-        content: '';
-        position: fixed;
-        right: 0;
-        top: 0;
-        width: 50vw;
-        z-index: -1;
-      }
     }
   }
 
@@ -209,6 +197,7 @@
   }
 
   &__projects {
+    align-items: flex-start;
     grid-area: prj;
     transition: opacity 0.5s $transition-ease-out;
 

@@ -1,0 +1,49 @@
+
+
+.pace {
+  pointer-events: none;
+  user-select: none;
+
+  &-progress {
+    background: darken($color-light, 5%);
+    bottom: 0;
+    position: fixed;
+    right: 100%;
+    top: 0;
+    transform-origin: right center;
+    transition: 0.1s ease;
+    width: 100vw;
+    will-change: right;
+    z-index: -1;
+  }
+
+  // when done
+  &-inactive &-progress {
+    opacity: 0;
+    transition: 0.4s 0.2s ease;
+
+    @include break(desktop) {
+      background: $color-light;
+      opacity: 1;
+      right: 50%;
+      width: 50vw;
+      transition: 1.25s 0.3s $transition-ease-in-out-quint;
+
+      .-blog-expanded &,
+      .-projects-expanded & {
+        transition-delay: 0s;
+        transition-duration: 0.75s;
+      }
+
+      .-blog-expanded & {
+        right: calc(#{$spacing-base} + #{100% / 21 * 1} + 43px + 110px);
+        width: calc(#{$spacing-base} + #{100% / 21 * 1} + 43px + 110px);
+      }
+
+      .-projects-expanded & {
+        right: calc(#{100% - (100% / 21 * 2)} - #{$spacing-base});
+        width: calc(#{100% - (100% / 21 * 2)} - #{$spacing-base});
+      }
+    }
+  }
+}
