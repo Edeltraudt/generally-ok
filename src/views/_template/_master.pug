@@ -12,22 +12,22 @@ html(lang='de')
     meta(charset='UTF-8')
     meta(name='viewport'  content='width=device-width, initial-scale=1')
     script(src='https://unpkg.com/scroll-out/dist/scroll-out.min.js')
-  body.page(class=pageClass)
+  body.layout(class=pageClass)
     if !isSubpage
-      h1.page__title.title
+      h1.layout__title.title
         a.title__link(href='/')
           strong.mask-appear(data-scroll-plain) Generally
           span.mask-appear(data-scroll-plain) OK
     else
-      h2.page__title.title
+      h2.layout__title.title
         a.title__link(href='/')
           strong.mask-appear(data-scroll-plain) Generally
           span.mask-appear(data-scroll-plain) OK
 
-    .page__logo.logo(data-scroll-plain)
+    .layout__logo.logo(data-scroll-plain)
 
-    .page__nav-spacer.nav--spacer
-    nav.page__nav.nav
+    .layout__nav-spacer.nav--spacer
+    nav.layout__nav.nav
       button#skipNav.nav__skip Skip Navigation
       ul.nav__list
         li.nav--spacer

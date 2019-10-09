@@ -1,13 +1,13 @@
 extends _template/_master
 
 block body
-  header.page__header(data-scroll)
+  header.layout__header(data-scroll)
     h2.intro.text-appear(data-scroll-plain) I sometimes think me smart, and now you’ll all be able to see it too.
     a.button.text-appear(data-scroll-plain, href='') Cleanse me
 
-  main.page__content(data-scroll-plain)
-    #posts.page__posts
-      #blog.page__blog.blog
+  main.layout__content(data-scroll-plain)
+    #posts.layout__posts
+      #blog.layout__blog.blog
         .posts
           .posts__header.text-appear(data-scroll-plain)
             .posts__expand
@@ -47,7 +47,7 @@ block body
                 h3.post__headline Why making Chromium the dev standard is plain disrespect
               a.post__link(href='', aria-label='Read xxx')
 
-      #projects.page__projects.projects(data-scroll)
+      #projects.layout__projects.projects(data-scroll)
         .posts
           .posts__header.text-appear(data-scroll-plain)
             .posts__expand
@@ -112,7 +112,7 @@ block body
                   .tag Design
               a.post__link(href='', aria-label='Read xxx')
 
-    .page__footer(data-scroll)
+    .layout__footer(data-scroll)
       p.posts-end Sorry to disappoint your endless scrolling needs, but my content is limited unlike your Instagram feed.
 
 block scripts
