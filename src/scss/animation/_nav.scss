@@ -1,7 +1,7 @@
 $nav-appear-start: 1s;
 
 .nav,
-.page__nav-spacer {
+.layout__nav-spacer {
   clip-path: inset(0 100% calc(100% - 2px) 0);
   transition-timing-function: linear;
 
@@ -20,7 +20,7 @@ $nav-appear-start: 1s;
   }
 }
 
-.page__nav-spacer {
+.layout__nav-spacer {
   transition-delay: $nav-appear-start;
 }
 
