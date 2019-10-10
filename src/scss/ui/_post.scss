@@ -19,8 +19,8 @@ $post-layer-transition-out: transform 0.3s $transition-ease-out;
     transition: $post-layer-transition-out;
     z-index: -1;
 
-    .blog & { opacity: 0.15; }
-    .projects & { opacity: 0.75; }
+    .layout__blog & { opacity: 0.15; }
+    .layout__projects & { opacity: 0.75; }
   }
 
   @include break(tablet-l) {
@@ -30,7 +30,7 @@ $post-layer-transition-out: transform 0.3s $transition-ease-out;
     }
   }
 
-  .blog & {
+  .layout__blog & {
     &::after {
       @include absolute;
       background: $color-primary;

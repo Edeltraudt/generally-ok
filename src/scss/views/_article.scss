@@ -8,7 +8,7 @@
   @return 100% / $max * $n;
 }
 
-.article {
+.article, .plain {
   overflow: visible;
   transition-delay: 0.5s;
 
@@ -76,7 +76,7 @@
     margin: 0 0 1em;
 
     @include break(mobile) {
-      font-size: $fs-medium;
+      font-size: calc(#{$fs-medium} + 0.125vw);
     }
   }
 

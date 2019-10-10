@@ -29,7 +29,7 @@
   color: $color-soft;
   font-weight: $fw-text;
 
-  .article & p:not([class]) {
+  p:not([class]) {
     all: inherit;
     margin: 0;
   }

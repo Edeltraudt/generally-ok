@@ -20,8 +20,15 @@
   }
 
   @include break(tablet-l) {
+    &.-third {
+      flex: 0 0 columns(3);
+    }
+
     & + & {
       margin-left: columns(1);
     }
+  }
+
+  @include break(desktop) {
   }
 }

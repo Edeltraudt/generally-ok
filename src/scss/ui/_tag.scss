@@ -8,24 +8,33 @@
 
   &-list {
     display: flex;
+    flex-flow: row wrap;
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  & + & {
-    margin-left: $spacing-x-small;
+  &-list:not(.-large) &.-date {
+    font-weight: $fw-text;
 
-    .-large & {
-      &::before {
-        color: $color-primary-light;
-        content: '/';
-        margin-right: $spacing-x-small;
-      }
+    &::after {
+      opacity: 0.8;
+      display: inline-block;
+      content: '/';
+      margin-left: $spacing-x-small / 3;
+      margin-right: -$spacing-x-small / 3;
     }
   }
 
+  &:not(:last-child) {
+    margin-right: $spacing-x-small;
 
-  .-large & {
+    .-large & {
+      &::after {
+        color: $color-primary-light;
+        content: '/';
+        margin-left: $spacing-x-small;
+      }
+    }
   }
 }

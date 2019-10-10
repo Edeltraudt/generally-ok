@@ -3,7 +3,7 @@
 $color-base:        #FFFFFF;
 $color-light:       #FAFAFA;
 $color-soft:        #A0A0A0;
-$color-text:        #404040;
+$color-text:        mix(#404040, $color-soft);
 $color-headlines:   #000000;
 
 $color-inv-base:    $color-headlines;
