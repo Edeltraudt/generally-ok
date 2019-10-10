@@ -1,0 +1,17 @@
+.visually-hidden { clip: rect(1px, 1px, 1px, 1px); clip: rect(1, 1, 1, 1); height: 1px; overflow: hidden; position: absolute; width: 1px; }
+
+.page__posts::before { background: #FAFAFA; content: ''; left: 0; height: 100vh; position: fixed; top: 0; transform-origin: left center; width: 100vw; z-index: -1; opacity: 0; }
+
+.loading .page__posts::before { animation: loading; }
+
+.pace { -webkit-pointer-events: none; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+
+.pace-inactive .pace-progress { animation: finishPace 1.25s 0.3s cubic-bezier(0.86, 0, 0.07, 1) forwards; }
+
+@keyframes finishPace { from { right: 100%;
+    width: 100vw; }
+  to { background: #FAFAFA;
+    right: 50%;
+    width: 50vw; } }
+
+.pace .pace-progress { background: #ededed; position: fixed; z-index: -1; top: 0; right: 100%; bottom: 0; width: 100vw; transform-origin: right center; will-change: right; transition: 0.1s ease; }
