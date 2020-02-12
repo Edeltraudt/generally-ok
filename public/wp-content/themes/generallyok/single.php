@@ -30,7 +30,11 @@
   ?>
 
   <!-- scroll spacer -->
-  <div class="layout__footer"></div>
+  <div class="layout__footer">
+    <p>
+      Sorry to disappoint your endless scrolling needs, but my content is limited unlike your Instagram feed.
+    </p>
+  </div>
 
 </main>
 

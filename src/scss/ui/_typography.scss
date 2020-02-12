@@ -5,7 +5,7 @@
   margin: 0 0 0.5em;
 
   @include break(tablet) {
-    font-size: calc(#{$fs-x-large} + 0.25vw);
+    font-size: calc(#{$fs-x-large} + 0.5vw);
   }
 }
 

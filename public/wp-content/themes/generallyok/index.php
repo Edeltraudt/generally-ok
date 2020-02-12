@@ -9,7 +9,7 @@
   $args_projects = array(
     'post_type' => 'post',
     'post_status' => 'publish',
-    'category_name' => 'projects'
+    'category_name' => 'project'
   );
   $arr_blog = new WP_Query( $args_blog );
   $arr_projects = new WP_Query( $args_projects );

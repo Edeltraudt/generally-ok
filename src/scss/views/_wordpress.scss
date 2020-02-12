@@ -1,0 +1,50 @@
+.wp-block-quote {
+  margin: $spacing-x-large 0;
+
+  @include break(tablet) {
+    .article__content & {
+      margin-left: article-columns(1);
+      margin-right: article-columns(1);
+    }
+  }
+
+  p:not([class]) {
+    color: $color-headlines;
+    font-size: $fs-x-large;
+  }
+
+  cite {
+    color: $color-text;
+    display: flex;
+    font-size: $fs-base;
+    font-style: normal;
+
+    &::before {
+      content: '';
+      border-bottom: 1px solid;
+      width: 3.125rem;
+      opacity: 0.5;
+      margin: auto 1em auto 0;
+    }
+  }
+}
+
+.article__content {
+  h2 {
+    margin: calc(#{$spacing-x-large} + 0.5vw) 0 0.5em;
+    font-size: calc(#{$fs-x-large} + 0.5vw);
+    font-weight: $fw-display;
+  }
+
+  h3 {
+    margin: calc(#{$spacing-large} + 0.25vw) 0 0.5em;
+    font-size: calc(#{$fs-large} + 0.25vw);
+    font-weight: $fw-display;
+  }
+
+  h4 {
+    margin: calc(#{$spacing-medium} + 0.25vw) 0 0.5em;
+    font-size: calc(#{$fs-medium} + 0.25vw);
+    font-weight: $fw-display;
+  }
+}

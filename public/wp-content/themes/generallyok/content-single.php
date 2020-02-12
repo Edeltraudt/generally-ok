@@ -4,7 +4,7 @@
   $description = get_the_excerpt();
 ?>
 
-<div class="article__content text-appear" data-scroll-plain>
+<div class="article__content appear" data-scroll-plain>
   <?php the_content(); ?>
 
 </div>
