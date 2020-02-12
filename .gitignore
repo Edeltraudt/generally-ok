@@ -3,3 +3,5 @@ yarn.lock
 public/js/*
 public/css/*
 public/*.html
+/public/wp-content/plugins/*
+/public/wp-content/uploads/*
