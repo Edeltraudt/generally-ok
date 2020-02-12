@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "sberbank-frontend",
-  "version": "1.0.1",
+  "name": "generally-ok",
+  "version": "0.1.1",
   "scripts": {
     "serve": "cd public && python -m SimpleHTTPServer 7654",
     "start": "concurrently --kill-others 'grunt watch' 'npm run serve'"
